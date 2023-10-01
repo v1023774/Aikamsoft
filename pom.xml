@@ -6,9 +6,13 @@
 
   <groupId>Aikamsoft</groupId>
   <artifactId>Aikamsoft</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>database</module>
+    </modules>
 
-  <name>Aikamsoft</name>
+    <name>Aikamsoft</name>
   <url>http://www.example.com</url>
 
   <properties>
