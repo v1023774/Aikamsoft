@@ -49,7 +49,7 @@ public class Database {
         final Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("select c.lastName, c.firstName\n" +
+        final Query query = session.createQuery("select c.lastName, c.firstName\n" +
                         "from Customer as c \n" +
                         "         join Purchases as pu on c.id = pu.customer_id\n" +
                         "         join Product as p on p.id = pu.product_id\n" +
@@ -58,7 +58,7 @@ public class Database {
                         "having count(pu.product_id) >= :minTimes").
                 setParameter("productName", productName).setParameter("minTimes", minTimes);
 
-        List<Object[]> customers = (List<Object[]>) query.list();
+        final List<Object[]> customers = (List<Object[]>) query.list();
         session.getTransaction().commit();
         return customers;
     }
@@ -73,7 +73,7 @@ public class Database {
         final Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("select  c.lastName, c.firstName\n" +
+        final Query query = session.createQuery("select  c.lastName, c.firstName\n" +
                         "from Customer as c\n" +
                         "         join Purchases as pu on c.id = pu.customer_id\n" +
                         "         join Product as p on p.id = pu.product_id\n" +
@@ -81,7 +81,7 @@ public class Database {
                         "having sum(p.price) >= :min and sum(p.price) <= :max").
                 setParameter("min", min).setParameter("max", max);
 
-        List<Object[]> customers = (List<Object[]>) query.list();
+        final List<Object[]> customers = (List<Object[]>) query.list();
         session.getTransaction().commit();
         return customers;
     }
@@ -95,7 +95,7 @@ public class Database {
         final Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("select c.firstName, c.lastName\n" +
+        final Query query = session.createQuery("select c.firstName, c.lastName\n" +
                 "from Customer as c\n" +
                 "left outer join Purchases pu on c.id = pu.customer_id\n" +
                 "group by c.firstName, c.lastName\n" +
@@ -103,7 +103,7 @@ public class Database {
                 "order by count(pu.product_id)\n" +
                 "asc").setMaxResults(quantity);
 
-        List<Object[]> customers = (List<Object[]>) query.list();
+        final List<Object[]> customers = (List<Object[]>) query.list();
         session.getTransaction().commit();
         return customers;
     }
@@ -127,7 +127,7 @@ public class Database {
                 "group by c.lastName, c.firstName\n" +
                 "order by summ\n" +
                 "desc").setParameter("dateStart", convert(dateStart)).setParameter("dateEnd", convert(dateEnd));
-        List<Object[]> customers = (List<Object[]>) query.list();
+        final List<Object[]> customers = (List<Object[]>) query.list();
         session.getTransaction().commit();
         return customers;
     }
@@ -172,7 +172,7 @@ public class Database {
         final Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
 
-        Query query = session.createQuery("select p.name, sum(p.price)\n" +
+        final Query query = session.createQuery("select p.name, sum(p.price)\n" +
                 "from Product as p\n" +
                 "         join Purchases pu on p.id = pu.product_id\n" +
                 "         join Customer c on pu.customer_id = c.id\n" +
@@ -184,7 +184,7 @@ public class Database {
                 "order by 2\n" +
                 "        desc").setParameter("dateStart", convert(dateStart)).setParameter("dateEnd", convert(dateEnd))
                 .setParameter("firstName", firstName).setParameter("lastName", lastName);
-        List<Object[]> customers = (List<Object[]>) query.list();
+        final List<Object[]> customers = (List<Object[]>) query.list();
         session.getTransaction().commit();
         return customers;
     }
