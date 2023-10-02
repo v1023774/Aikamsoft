@@ -28,13 +28,13 @@ public class Database {
     /**
      * Выбирает всех покупателей с указанным именем
      *
-     * @param firstName - имя покупателя.
+     * @param lastName - фамилия покупателя.
      */
-    public List<Customer> getCustomersListByFirstName(@NotNull final String firstName) {
+    public List<Customer> getCustomersListByFirstName(@NotNull final String lastName) {
         final Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        final List<Customer> customers = session.createQuery("FROM Customer where firstName = :firstName").
-                setParameter("firstName", firstName).getResultList();
+        final List<Customer> customers = session.createQuery("FROM Customer where lastName = :lastName").
+                setParameter("lastName", lastName).getResultList();
         session.getTransaction().commit();
         return customers;
     }
