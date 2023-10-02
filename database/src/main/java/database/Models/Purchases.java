@@ -1,6 +1,7 @@
 package database.Models;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.Objects;
 /**
  * Класс сущности покупки
@@ -18,6 +19,9 @@ public class Purchases {
 
     @Column(name = "product_id")
     public int product_id;
+
+    @Column(name = "date")
+    public Date date;
 
     public Purchases() {
     }
