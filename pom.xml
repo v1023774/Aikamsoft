@@ -11,6 +11,7 @@
     <modules>
         <module>database</module>
         <module>fileConstructer</module>
+        <module>mainModule</module>
     </modules>
 
     <name>Aikamsoft</name>

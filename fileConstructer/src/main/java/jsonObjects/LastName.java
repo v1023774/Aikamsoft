@@ -1,9 +1,9 @@
 package jsonObjects;
 
-public class LastName implements JsonObject {
+public class LastName implements JsonObjects {
 
-    public String lastName;
-    public String firstName;
+    private final String lastName;
+    private String firstName;
 
     public LastName(String lastName, String firstName) {
         this.lastName = lastName;

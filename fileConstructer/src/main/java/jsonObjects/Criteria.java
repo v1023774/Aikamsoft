@@ -6,22 +6,16 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Criteria implements JsonObject{
-    public JsonElement criteria;
-    public String message;
+public class Criteria implements JsonObjects {
+    private JsonElement criteria;
 
-    public List<JsonObject> results = new ArrayList<>();
+    private List<JsonObjects> results = new ArrayList<>();
 
     public Criteria(@NotNull final  JsonElement criteria) {
         this.criteria = criteria;
     }
-    public Criteria(@NotNull final  JsonElement criteria, String message) {
-        this.criteria = criteria;
-        this.message = message;
-        this.results = null;
-    }
 
-    public void addJsonToResultList(JsonObject jsonObject) {
+    public void addJsonToResultList(JsonObjects jsonObject) {
         this.results.add(jsonObject);
     }
 }

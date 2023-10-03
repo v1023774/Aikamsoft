@@ -2,7 +2,7 @@ package jsonObjects;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Error implements JsonObject {
+public class Error implements JsonObjects {
     private final String type;
     private final String message;
 
