@@ -1,0 +1,89 @@
+{
+  "type": "search",
+  "results": [
+    {
+      "criteria": {
+        "lastName": "Istomin"
+      },
+      "results": [
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "productName": "knife",
+        "minTimes": 1
+      },
+      "results": [
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        },
+        {
+          "lastName": "666",
+          "firstName": "Stray"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "lastName": "Titin"
+      },
+      "results": [
+        {
+          "lastName": "Titin",
+          "firstName": "Matvey"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "minExpenses": 0,
+        "maxExpenses": 200
+      },
+      "results": [
+        {
+          "lastName": "666",
+          "firstName": "Stray"
+        },
+        {
+          "lastName": "Kotov",
+          "firstName": "Sasha"
+        },
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "badCustomers": 2
+      },
+      "results": [
+        {
+          "lastName": "Ilya",
+          "firstName": "Asov"
+        },
+        {
+          "lastName": "Sasha",
+          "firstName": "Kotov"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "lastName": "666"
+      },
+      "results": [
+        {
+          "lastName": "666",
+          "firstName": "Stray"
+        }
+      ]
+    }
+  ]
+}

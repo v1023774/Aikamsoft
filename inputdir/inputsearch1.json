@@ -5,10 +5,7 @@
     },
     {
       "productName": "spoon",
-      "minTimes": 1
-    },
-    {
-      "lastName": "Kotov"
+      "minTimes": 2
     },
     {
       "minExpenses": 10,

@@ -1,0 +1,68 @@
+{
+  "type": "stat",
+  "totalDays": 5235,
+  "customers": [
+    {
+      "name": "Titin Matvey",
+      "purchases": [
+        {
+          "name": "stray",
+          "expenses": 198
+        },
+        {
+          "name": "bottle",
+          "expenses": 24
+        },
+        {
+          "name": "spoon",
+          "expenses": 20
+        }
+      ],
+      "totalExpenses": 242
+    },
+    {
+      "name": "666 Stray",
+      "purchases": [
+        {
+          "name": "bottle",
+          "expenses": 24
+        },
+        {
+          "name": "knife",
+          "expenses": 22
+        },
+        {
+          "name": "spoon",
+          "expenses": 20
+        }
+      ],
+      "totalExpenses": 66
+    },
+    {
+      "name": "Istomin Ilya",
+      "purchases": [
+        {
+          "name": "spoon",
+          "expenses": 40
+        },
+        {
+          "name": "knife",
+          "expenses": 22
+        }
+      ],
+      "totalExpenses": 62
+    },
+    {
+      "name": "Kotov Sasha",
+      "purchases": [
+        {
+          "name": "spoon",
+          "expenses": 20
+        }
+      ],
+      "totalExpenses": 20
+    }
+  ],
+  "totalExpenses": 390,
+  "avgExpenses": 97.5
+}
