@@ -1,0 +1,21 @@
+{
+  "criterias": [
+    {
+      "lastName": "Istomin"
+    },
+    {
+      "productName": "spoon",
+      "minTimes": 1
+    },
+    {
+      "lastName": "Kotov"
+    },
+    {
+      "minExpenses": 10,
+      "maxExpenses": 100
+    },
+    {
+      "badCustomers": 3
+    }
+  ]
+}

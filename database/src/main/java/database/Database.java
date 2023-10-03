@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import java.time.ZoneId;
 import java.util.Date;
 
 import java.time.DayOfWeek;
@@ -28,13 +29,13 @@ public class Database {
     /**
      * Выбирает всех покупателей с указанным именем
      *
-     * @param firstName - имя покупателя.
+     * @param lastName - фамилия покупателя.
      */
-    public List<Customer> getCustomersListByFirstName(@NotNull final String firstName) {
+    public List<Customer> getCustomersListByFirstName(@NotNull final String lastName) {
         final Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        final List<Customer> customers = session.createQuery("FROM Customer where firstName = :firstName").
-                setParameter("firstName", firstName).getResultList();
+        final List<Customer> customers = session.createQuery("FROM Customer where lastName = :lastName").
+                setParameter("lastName", lastName).getResultList();
         session.getTransaction().commit();
         return customers;
     }
@@ -138,11 +139,14 @@ public class Database {
      * @param startDate - начальная дата
      * @param endDate   - конечная дата
      */
-    public static long getNumberOfWorkingDays(@NotNull final LocalDate startDate, @NotNull final LocalDate endDate) {
-        final long totalDays = ChronoUnit.DAYS.between(startDate, endDate) + 1;
+    public static long getNumberOfWorkingDays(@NotNull final Date startDate, @NotNull final Date endDate) {
+
+        LocalDate startLocalDate = convertDateToLocalDate(startDate);
+        LocalDate endLocalDat =  convertDateToLocalDate(endDate);
+        final long totalDays = ChronoUnit.DAYS.between(startLocalDate, endLocalDat) + 1;
         long weekends = 0;
 
-        for (LocalDate date = startDate; !date.isAfter(endDate); date = date.plusDays(1)) {
+        for (LocalDate date = startLocalDate; !date.isAfter(endLocalDat); date = date.plusDays(1)) {
             if (date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY) {
                 weekends++;
             }
@@ -161,6 +165,16 @@ public class Database {
     }
 
     /**
+     * Метод конвертирует дату из Date в LocalDate
+     *
+     * @param date - дата типа java.util.Date
+     */
+    private static LocalDate convertDateToLocalDate(Date date) {
+        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    }
+
+
+    /**
      * Данные по покупателям за этот период, упорядоченные по общей стоимости покупок по убыванию.
      *
      * @param dateStart - начальная дата
@@ -173,16 +187,16 @@ public class Database {
         session.beginTransaction();
 
         final Query query = session.createQuery("select p.name, sum(p.price)\n" +
-                "from Product as p\n" +
-                "         join Purchases pu on p.id = pu.product_id\n" +
-                "         join Customer c on pu.customer_id = c.id\n" +
-                "where pu.date > :dateStart\n" +
-                "  and pu.date < :dateEnd\n" +
-                "  and c.lastName = :lastName\n" +
-                "  and c.firstName = :firstName\n" +
-                "group by 1\n" +
-                "order by 2\n" +
-                "        desc").setParameter("dateStart", convert(dateStart)).setParameter("dateEnd", convert(dateEnd))
+                        "from Product as p\n" +
+                        "         join Purchases pu on p.id = pu.product_id\n" +
+                        "         join Customer c on pu.customer_id = c.id\n" +
+                        "where pu.date > :dateStart\n" +
+                        "  and pu.date < :dateEnd\n" +
+                        "  and c.lastName = :lastName\n" +
+                        "  and c.firstName = :firstName\n" +
+                        "group by 1\n" +
+                        "order by 2\n" +
+                        "        desc").setParameter("dateStart", convert(dateStart)).setParameter("dateEnd", convert(dateEnd))
                 .setParameter("firstName", firstName).setParameter("lastName", lastName);
         final List<Object[]> customers = (List<Object[]>) query.list();
         session.getTransaction().commit();
