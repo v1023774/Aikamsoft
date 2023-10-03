@@ -49,12 +49,6 @@
     },
     {
       "criteria": {
-        "12312": 23
-      },
-      "message": "Unknown criteria name"
-    },
-    {
-      "criteria": {
         "minExpenses": 10,
         "maxExpenses": 100
       },
