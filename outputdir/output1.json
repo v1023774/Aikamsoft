@@ -1,0 +1,79 @@
+{
+  "type": "search",
+  "results": [
+    {
+      "criteria": {
+        "lastName": "Istomin"
+      },
+      "results": [
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "productName": "spoon",
+        "minTimes": 2
+      },
+      "results": [
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        },
+        {
+          "lastName": "Kotov",
+          "firstName": "Sasha"
+        },
+        {
+          "lastName": "Titin",
+          "firstName": "Matvey"
+        },
+        {
+          "lastName": "666",
+          "firstName": "Stray"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "minExpenses": 10,
+        "maxExpenses": 100
+      },
+      "results": [
+        {
+          "lastName": "666",
+          "firstName": "Stray"
+        },
+        {
+          "lastName": "Kotov",
+          "firstName": "Sasha"
+        },
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        }
+      ]
+    },
+    {
+      "criteria": {
+        "badCustomers": 3
+      },
+      "results": [
+        {
+          "lastName": "Ilya",
+          "firstName": "Asov"
+        },
+        {
+          "lastName": "Sasha",
+          "firstName": "Kotov"
+        },
+        {
+          "lastName": "Matvey",
+          "firstName": "Titin"
+        }
+      ]
+    }
+  ]
+}

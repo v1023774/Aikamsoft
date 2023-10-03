@@ -1,0 +1,24 @@
+{
+  "criterias": [
+    {
+      "lastName": "Istomin"
+    },
+    {
+      "productName": "knife",
+      "minTimes": 1
+    },
+    {
+      "lastName": "Titin"
+    },
+    {
+      "minExpenses": 0,
+      "maxExpenses": 200
+    },
+    {
+      "badCustomers": 2
+    },
+    {
+      "lastName": "666"
+    }
+  ]
+}

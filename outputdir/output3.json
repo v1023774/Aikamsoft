@@ -1,0 +1,16 @@
+{
+  "type": "search",
+  "results": [
+    {
+      "criteria": {
+        "lastName": "Istomin"
+      },
+      "results": [
+        {
+          "lastName": "Istomin",
+          "firstName": "Ilya"
+        }
+      ]
+    }
+  ]
+}
