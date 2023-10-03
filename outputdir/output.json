@@ -1,90 +1,68 @@
 {
-  "type": "search",
-  "results": [
+  "type": "stat",
+  "totalDays": 3140,
+  "customers": [
     {
-      "criteria": {
-        "lastName": "Istomin"
-      },
-      "results": [
+      "name": "Titin Matvey",
+      "purchases": [
         {
-          "lastName": "Istomin",
-          "firstName": "Ilya"
+          "name": "stray",
+          "expenses": 99
+        },
+        {
+          "name": "bottle",
+          "expenses": 12
+        },
+        {
+          "name": "spoon",
+          "expenses": 10
         }
-      ]
+      ],
+      "totalExpenses": 121
     },
     {
-      "criteria": {
-        "productName": "spoon",
-        "minTimes": 1
-      },
-      "results": [
+      "name": "666 Stray",
+      "purchases": [
         {
-          "lastName": "Istomin",
-          "firstName": "Ilya"
+          "name": "knife",
+          "expenses": 22
         },
         {
-          "lastName": "Kotov",
-          "firstName": "Sasha"
+          "name": "bottle",
+          "expenses": 12
         },
         {
-          "lastName": "Titin",
-          "firstName": "Matvey"
-        },
-        {
-          "lastName": "666",
-          "firstName": "Stray"
+          "name": "spoon",
+          "expenses": 10
         }
-      ]
+      ],
+      "totalExpenses": 44
     },
     {
-      "criteria": {
-        "lastName": "Kotov"
-      },
-      "results": [
+      "name": "Istomin Ilya",
+      "purchases": [
         {
-          "lastName": "Kotov",
-          "firstName": "Sasha"
+          "name": "spoon",
+          "expenses": 20
+        },
+        {
+          "name": "knife",
+          "expenses": 11
         }
-      ]
+      ],
+      "totalExpenses": 31
     },
     {
-      "criteria": {
-        "minExpenses": 10,
-        "maxExpenses": 100
-      },
-      "results": [
+      "name": "Kotov Sasha",
+      "purchases": [
         {
-          "lastName": "666",
-          "firstName": "Stray"
-        },
-        {
-          "lastName": "Kotov",
-          "firstName": "Sasha"
-        },
-        {
-          "lastName": "Istomin",
-          "firstName": "Ilya"
+          "name": "spoon",
+          "expenses": 10
         }
-      ]
-    },
-    {
-      "criteria": {
-        "badCustomers": 3
-      },
-      "results": [
-        {
-          "lastName": "Ilya",
-          "firstName": "Asov"
-        },
-        {
-          "lastName": "Sasha",
-          "firstName": "Kotov"
-        },
-        {
-          "lastName": "Matvey",
-          "firstName": "Titin"
-        }
-      ]
+      ],
+      "totalExpenses": 10
     }
-  ]
+  ],
+  "totalExpenses": 206,
+  "avgExpenses": 51.5
 }

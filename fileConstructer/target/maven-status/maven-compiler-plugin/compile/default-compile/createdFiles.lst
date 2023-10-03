@@ -1,0 +1,9 @@
+jsonObjects\SearchJson.class
+jsonObjects\StatJson.class
+jsonObjects\Criteria.class
+jsonObjects\Error.class
+jsonObjects\JsonObjects.class
+jsonObjects\LastName.class
+jsonObjects\Purchases.class
+workWithFiles\CreateJson.class
+jsonObjects\Customers.class
