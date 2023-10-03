@@ -57,7 +57,6 @@ public class CreateJson {
     private static void statWriter(@NotNull final String input, @NotNull final String output) {
         try (final FileWriter writer = new FileWriter(output)) {
             final JsonObjects statJson = statConstructor(input);
-            System.out.println(statJson);
             final Gson gson = new Gson();
             writer.write(gson.toJson(statJson));
             writer.flush();
