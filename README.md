@@ -9,7 +9,7 @@
 
 ## Инструкция по запуску программы.
 1. В папке проекта перейдите в папку  out\artifacts\Aikamsoft_jar. 
-2. Здесь вы можете запустить Aikamsoft.jar файл командой : java -jar .\Aikamsoft.jar search ..\\..\\..\\inputdir\\inputsearch.json ..\\..\\..\\outputdir\\output.json.
+2. Здесь вы можете запустить Aikamsoft.jar файл командой : java -jar .\Aikamsoft.jar search ..\\..\\..\\inputdir\\inputsearch1.json ..\\..\\..\\outputdir\\output1.json.
 После указания имени jar файла нужно указать 3 параметра: 1 - критерий(search или stat)б 2 - путь входного json файла, 3 - путь выходного json файла.
 
 ## Инструкция по восстановлению базы данных.
