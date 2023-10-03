@@ -160,7 +160,7 @@ public class Database {
      *
      * @param date - дата типа java.util.Date
      */
-    private static java.sql.Date convert(java.util.Date date) {
+    private static java.sql.Date convert(@NotNull final java.util.Date date) {
         return new java.sql.Date(date.getTime());
     }
 
@@ -169,7 +169,7 @@ public class Database {
      *
      * @param date - дата типа java.util.Date
      */
-    private static LocalDate convertDateToLocalDate(Date date) {
+    private static LocalDate convertDateToLocalDate(@NotNull final Date date) {
         return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
